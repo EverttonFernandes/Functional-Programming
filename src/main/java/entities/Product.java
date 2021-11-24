@@ -2,11 +2,11 @@ package entities;
 
 public class Product {
     private String name;
-    private double value;
+    private double price;
 
-    public Product(String name, double value) {
+    public Product(String name, double price) {
         this.name = name;
-        this.value = value;
+        this.price = price;
     }
 
     public String getName() {
@@ -17,19 +17,23 @@ public class Product {
         this.name = name;
     }
 
-    public double getValue() {
-        return value;
+    public double getPrice() {
+        return price;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public static boolean staticProductPredicate(Product product) {
+        return product.getPrice() >= 7000.00;
     }
 
     @Override
     public String toString() {
         return "Product{" +
                 "name='" + name + '\'' +
-                ", value=" + value +
+                ", price=" + price +
                 '}';
     }
 }
