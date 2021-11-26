@@ -4,6 +4,7 @@ import entities.Product;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Program {
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class Program {
         productList.add(new Product("IPhone 12", 7000.00));
         productList.add(new Product("Playstation 5", 5500.00));
 
-        productList.removeIf(Product::staticProductPredicate); // Method References
+        productList.removeIf(Product::nonStaticProductPredicate); 
 
         for (Product product : productList) {
             System.out.println(product);
